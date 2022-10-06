@@ -1,4 +1,4 @@
-project(MorphoTest)
+project(ArduinoMorphologica)
 
 # From CMAKE_SYSTEM work out which of __OSX__, __GLN__, __NIX__ or __WIN__ are required
 message(STATUS "Operating system: " ${CMAKE_SYSTEM})
@@ -38,8 +38,5 @@ endif()
 
 set(MORPH_LIBS_GL ${OpenCV_LIBS} OpenGL::GL Freetype::Freetype glfw)
 
-
-
-add_executable(MorphoTest test.cpp)
-
-target_link_libraries(MorphoTest ${MORPH_LIBS_GL})
+add_executable(ArduinoMorphologica main.cpp)
+target_link_libraries(ArduinoMorphologica ${MORPH_LIBS_GL})

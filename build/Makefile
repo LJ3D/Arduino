@@ -117,32 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MorphoTest
+# Target rules for targets named ArduinoMorphologica
 
 # Build rule for target.
-MorphoTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MorphoTest
-.PHONY : MorphoTest
+ArduinoMorphologica: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ArduinoMorphologica
+.PHONY : ArduinoMorphologica
 
 # fast build rule for target.
-MorphoTest/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MorphoTest.dir/build.make CMakeFiles/MorphoTest.dir/build
-.PHONY : MorphoTest/fast
+ArduinoMorphologica/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArduinoMorphologica.dir/build.make CMakeFiles/ArduinoMorphologica.dir/build
+.PHONY : ArduinoMorphologica/fast
 
 # target to build an object file
-test.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MorphoTest.dir/build.make CMakeFiles/MorphoTest.dir/test.o
-.PHONY : test.o
+main.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArduinoMorphologica.dir/build.make CMakeFiles/ArduinoMorphologica.dir/main.o
+.PHONY : main.o
 
 # target to preprocess a source file
-test.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MorphoTest.dir/build.make CMakeFiles/MorphoTest.dir/test.i
-.PHONY : test.i
+main.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArduinoMorphologica.dir/build.make CMakeFiles/ArduinoMorphologica.dir/main.i
+.PHONY : main.i
 
 # target to generate assembly for a file
-test.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MorphoTest.dir/build.make CMakeFiles/MorphoTest.dir/test.s
-.PHONY : test.s
+main.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArduinoMorphologica.dir/build.make CMakeFiles/ArduinoMorphologica.dir/main.s
+.PHONY : main.s
 
 # Help Target
 help:
@@ -152,10 +152,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... MorphoTest"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... ArduinoMorphologica"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

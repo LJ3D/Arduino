@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/lucian/git-repos/Arduino/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/MorphoTest.dir/all
+all: CMakeFiles/ArduinoMorphologica.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/MorphoTest.dir/clean
+clean: CMakeFiles/ArduinoMorphologica.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/MorphoTest.dir
+# Target rules for target CMakeFiles/ArduinoMorphologica.dir
 
 # All Build rule for target.
-CMakeFiles/MorphoTest.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MorphoTest.dir/build.make CMakeFiles/MorphoTest.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MorphoTest.dir/build.make CMakeFiles/MorphoTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lucian/git-repos/Arduino/build/CMakeFiles --progress-num=1,2 "Built target MorphoTest"
-.PHONY : CMakeFiles/MorphoTest.dir/all
+CMakeFiles/ArduinoMorphologica.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArduinoMorphologica.dir/build.make CMakeFiles/ArduinoMorphologica.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArduinoMorphologica.dir/build.make CMakeFiles/ArduinoMorphologica.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lucian/git-repos/Arduino/build/CMakeFiles --progress-num=1,2 "Built target ArduinoMorphologica"
+.PHONY : CMakeFiles/ArduinoMorphologica.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/MorphoTest.dir/rule: cmake_check_build_system
+CMakeFiles/ArduinoMorphologica.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucian/git-repos/Arduino/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MorphoTest.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ArduinoMorphologica.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucian/git-repos/Arduino/build/CMakeFiles 0
-.PHONY : CMakeFiles/MorphoTest.dir/rule
+.PHONY : CMakeFiles/ArduinoMorphologica.dir/rule
 
 # Convenience name for target.
-MorphoTest: CMakeFiles/MorphoTest.dir/rule
-.PHONY : MorphoTest
+ArduinoMorphologica: CMakeFiles/ArduinoMorphologica.dir/rule
+.PHONY : ArduinoMorphologica
 
 # clean rule for target.
-CMakeFiles/MorphoTest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MorphoTest.dir/build.make CMakeFiles/MorphoTest.dir/clean
-.PHONY : CMakeFiles/MorphoTest.dir/clean
+CMakeFiles/ArduinoMorphologica.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ArduinoMorphologica.dir/build.make CMakeFiles/ArduinoMorphologica.dir/clean
+.PHONY : CMakeFiles/ArduinoMorphologica.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
