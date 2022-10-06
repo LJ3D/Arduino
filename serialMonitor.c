@@ -3,7 +3,7 @@
 #include <unistd.h>  
 #include <fcntl.h>
 #include <errno.h>
-//#include <termios.h>
+//#include <termios.h> // POSIX terminal control definitions, not needed?
 
 #define DEVTTY "/dev/ttyACM0"
 
@@ -48,6 +48,9 @@ int main(){
 	sleep_ms(2500); // Give arduino a second to start
 	while(1){
 		int n = read(port, buffer, BUFFERSIZE);
+		if(n > 0){
+			printf("Read %d bytes: ", n);
+		}
 		for(int i=0; i<n; i++){
 			printf("%c", buffer[i]);
 		}
