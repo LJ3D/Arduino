@@ -1,1 +1,0 @@
-/usr/bin/c++ -D__GLN__ -Wall -Wfatal-errors -g -Wno-unused-result -Wno-unknown-pragmas -march=native -O3 -DGL3_PROTOTYPES -DGL_GLEXT_PROTOTYPES -DMORPH_FONTS_DIR="\"/home/lucian/git-repos/Arduino/morphologica/fonts\"" -rdynamic CMakeFiles/MorphoTest.dir/test.o -o MorphoTest  /usr/lib/libfreetype.so /usr/lib/libglfw.so.3.3 /usr/lib/libGLX.so /usr/lib/libOpenGL.so 
