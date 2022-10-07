@@ -60,7 +60,7 @@ int main (int argc, char** argv)
             arduino.readUntilNewline();
             int value = arduino.getDataInt();
             arduino.clearDataVect();
-            std::cout << value << std::endl;
+            //std::cout << value << std::endl;
             if(value != -1){
                 gv->append (i, value, 0);
                 last10values.push_back(value);
