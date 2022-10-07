@@ -12,11 +12,11 @@
 #include <cmath>
 #include <array>
 
-#include "arduinoInterface.hpp"
+#include "ArduinoSerialIO/arduinoSerialIO.hpp"
 
 int main (int argc, char** argv)
 {
-    arduinoPortIO arduino("/dev/ttyACM0");
+    ArduinoSerialIO arduino("/dev/ttyACM0");
     usleep(1000000);
 
     int rtn = -1;
@@ -57,23 +57,19 @@ int main (int argc, char** argv)
             glfwWaitEventsTimeout (0.018);
 
             // == Arduino stuff:
-            arduino.clearBuffer();
-            std::string data = arduino.readGetBuffer();
-            int dataSTOI;
-            try{
-                dataSTOI = std::stoi(data);
-                gv->append (i, dataSTOI, 0);
-                last10values.push_back(dataSTOI);
-            }catch(...){
-                //std::cout << "STOI error\n";
+            arduino.readUntilNewline();
+            int value = arduino.getDataInt();
+            arduino.clearDataVect();
+            std::cout << value << std::endl;
+            if(value != -1){
+                gv->append (i, value, 0);
+                last10values.push_back(value);
             }
             // Moving average
             if(last10values.size() > 10){
                 last10values.erase(last10values.begin());
             }
-            gv->append (i, std::accumulate(last10values.begin(), last10values.end(), 0.0) / last10values.size(), 1);
-
-            v.render();
+            gv->append(i, std::accumulate(last10values.begin(), last10values.end(), 0.0) / last10values.size(), 1);
             i++;
 
             // Experiment with graphing stuff
@@ -81,6 +77,8 @@ int main (int argc, char** argv)
                 i = 0;
                 gv->clear();
             }
+
+            v.render();
         }
 
     } catch (const std::exception& e) {

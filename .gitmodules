@@ -1,3 +1,6 @@
 [submodule "morphologica"]
 	path = morphologica
 	url = https://github.com/ABRG-Models/morphologica.git
+[submodule "ArduinoSerialIO"]
+	path = ArduinoSerialIO
+	url = https://github.com/LJ3D/ArduinoSerialIO.git
