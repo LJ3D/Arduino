@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.8)
+
 project(ArduinoMorphologica)
 
 # From CMAKE_SYSTEM work out which of __OSX__, __GLN__, __NIX__ or __WIN__ are required
