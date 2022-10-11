@@ -53,17 +53,17 @@ int main (int argc, char** argv)
 
         v.render();
         int i = 0;
+        int value = 0;
         while (v.readyToFinish == false) {
             glfwWaitEventsTimeout (0.018);
-
             // == Arduino stuff:
             serial.flush();
-            int value = serial.parseInt();
-            //std::cout << value << std::endl;
-            if(value != -1){
-                gv->append (i, value, 0);
-                last10values.push_back(value);
+            std::string dataStr = serial.readStringUntil('\n');
+            if(dataStr != "\n"){
+                value = std::stoi(dataStr);
             }
+            gv->append (i, value, 0);
+            last10values.push_back(value);
             // Moving average
             if(last10values.size() > 10){
                 last10values.erase(last10values.begin());
