@@ -14,7 +14,7 @@ int cm;
 
 void setup() {
   //Serial Port begin
-  Serial.begin (19200);
+  Serial.begin(9600);
   //Define inputs and outputs
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
@@ -24,6 +24,7 @@ void setup() {
 
 
 void measureDistance(){
+  digitalWrite(LED_BUILTIN, HIGH);
   // The sensor is triggered by a HIGH pulse of 10 or more microseconds.
   // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
   digitalWrite(trigPin, LOW);
@@ -41,6 +42,7 @@ void measureDistance(){
   cm = (duration/2) / 29.1;     // Divide by 29.1 or multiply by 0.0343
   Serial.print(cm);
   Serial.println();
+  digitalWrite(LED_BUILTIN, LOW);
 }
 
 void loop() {
