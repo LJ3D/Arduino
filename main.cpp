@@ -25,22 +25,22 @@ int main (int argc, char** argv)
 
     int rtn = -1;
     try {
-        morph::GraphVisual<float>* gv = new morph::GraphVisual<float> (v.shaderprog, v.tshaderprog, {-1,-0.5,0}); // Create a GraphVisual object to display the graph
+        morph::GraphVisual<float>* gv = new morph::GraphVisual<float>(v.shaderprog, v.tshaderprog, {-1,-0.5,0}); // Create a GraphVisual object to display the graph
 
         // Change the size of the graph and range of the axes
         gv->setsize (2, 1);
 
         // Change the range of the axes
         int limit = 512;
-        gv->setlimits (-1, limit, -1, 64);
+        gv->setlimits(-1, limit, -1, 64);
 
         // Set the graphing policy
         gv->policy = morph::stylepolicy::lines; // markers, lines, both, allcolour
         gv->axisstyle = morph::axisstyle::twinax;
 
         // We 'prepare' a dataset, but won't fill it with data yet. However, we do give the data legend label here.
-        gv->prepdata ("Arduino output", morph::axisside::left);
-        gv->prepdata ("Arduino output, moving average (last 10 values)", morph::axisside::left);
+        gv->prepdata("Arduino output", morph::axisside::left);
+        gv->prepdata("Arduino output, moving average (last 10 values)", morph::axisside::left);
 
         // Set the labels up
         gv->ylabel = "Arduino output (CM)";
@@ -48,14 +48,14 @@ int main (int argc, char** argv)
         
         gv->finalize(); // "Finalize" the graph (Sets everything up ready for data to be added and drawn)
         
-        v.addVisualModel (static_cast<morph::VisualModel*>(gv)); // Add the GraphVisual (as a VisualModel*)
+        v.addVisualModel(static_cast<morph::VisualModel*>(gv)); // Add the GraphVisual (as a VisualModel*)
         
         v.render(); // Render the graph
         int i = 0; // Counter for the number of points added to the graph
         int value = 0; // Value read from the serial port
         std::vector<int> last10values; // last 10 values for moving average
         while (v.readyToFinish == false) {
-            glfwWaitEventsTimeout (0.018);
+            glfwWaitEventsTimeout(0.018);
             serial.flush(); // Clear the serial buffer
             std::string dataStr = serial.readStringUntil('\n');
             while(dataStr == "\n"){ // Sometimes the first character to hit the buffer is a newline, in that case, read again until we get a value that std::stoi can parse
