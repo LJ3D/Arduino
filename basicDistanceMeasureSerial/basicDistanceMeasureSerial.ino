@@ -22,7 +22,6 @@ void setup() {
   digitalWrite(LED_BUILTIN, LOW);
 }
 
-
 void measureDistance(){
   digitalWrite(LED_BUILTIN, HIGH);
   // The sensor is triggered by a HIGH pulse of 10 or more microseconds.
@@ -32,16 +31,13 @@ void measureDistance(){
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-  
   // Read the signal from the sensor: a HIGH pulse whose
   // duration is the time (in microseconds) from the sending
   // of the ping to the reception of its echo off of an object.
   duration = pulseIn(echoPin, HIGH);
-  
   // Convert the time into a distance
   cm = (duration/2) / 29.1;     // Divide by 29.1 or multiply by 0.0343
-  Serial.print(cm);
-  Serial.println();
+  Serial.println(cm);
   digitalWrite(LED_BUILTIN, LOW);
 }
 
