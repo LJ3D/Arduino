@@ -38,5 +38,8 @@ endif()
 
 set(MORPH_LIBS_GL ${OpenCV_LIBS} OpenGL::GL Freetype::Freetype glfw)
 
-add_executable(ArduinoMorphologica main.cpp)
+# ArduinoSerialIO
+file(GLOB arduinoSerialIO_SRC "ArduinoSerialIO/*.cpp")
+
+add_executable(ArduinoMorphologica main.cpp ${arduinoSerialIO_SRC})
 target_link_libraries(ArduinoMorphologica ${MORPH_LIBS_GL})

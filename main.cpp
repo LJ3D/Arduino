@@ -12,12 +12,12 @@
 #include <cmath>
 #include <array>
 
-#include "ArduinoSerialIO/arduinoSerialIO.hpp"
+#include "ArduinoSerialIO/arduinoSerial.h"
 
 int main (int argc, char** argv)
 {
-    ArduinoSerialIO arduino("/dev/ttyACM0");
-    usleep(1000000);
+    arduinoSerial serial("/dev/ttyACM0");
+    serial.begin(B9600);
 
     int rtn = -1;
 
@@ -57,9 +57,8 @@ int main (int argc, char** argv)
             glfwWaitEventsTimeout (0.018);
 
             // == Arduino stuff:
-            arduino.readUntilNewline();
-            int value = arduino.getDataInt();
-            arduino.clearDataVect();
+            serial.flush();
+            int value = serial.parseInt();
             //std::cout << value << std::endl;
             if(value != -1){
                 gv->append (i, value, 0);
