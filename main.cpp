@@ -12,7 +12,7 @@
 #include <cmath>
 #include <array>
 
-#include "ArduinoSerialIO/arduinoSerial.h"
+#include "ArduinoSerialIO/arduinoSerial.hpp"
 
 int main (int argc, char** argv)
 {
